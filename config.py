@@ -16,10 +16,10 @@ def is_enabled(value, default=False):
     return default
 
 # Bot Information
-API_ID = int(environ.get("API_ID", "")) if environ.get("API_ID", "0").isdigit() else 0
-API_HASH = environ.get("API_HASH", "")
+API_ID = int(environ.get("API_ID", "25863720")) if environ.get("API_ID", "0").isdigit() else 0
+API_HASH = environ.get("API_HASH", "9a3d47e00f89ec02f0f3111c41a37e6c")
 BOT_TOKEN = environ.get("BOT_TOKEN", "")
-BOT_USERNAME = environ.get("BOT_USERNAME", "File_X_Sharing_Bot")  # without @
+BOT_USERNAME = environ.get("BOT_USERNAME", "Abnrequest_bot")  # without @
 PORT = int(environ.get("PORT", "80"))
 
 # Validate Bot API
@@ -27,7 +27,7 @@ if not API_ID or not API_HASH or not BOT_TOKEN:
     raise ValueError("API_ID, API_HASH, and BOT_TOKEN are required!")
 
 # Force subscription channel IDs
-AUTH_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('AUTH_CHANNEL', '-1002394633791').split()]
+AUTH_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('AUTH_CHANNEL', '-1002845884615').split()]
 
 # Bot Start Pictures
 PICS = environ.get('PICS', 
@@ -36,7 +36,7 @@ PICS = environ.get('PICS',
                    'https://graph.org/file/962a8ff5525ed8640afe8-5a63755db724b4bc37.jpg').split()
 
 # Admin IDs
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '5654093580').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '5738825104').split()]
 
 # Clone Information
 CLONE_MODE = is_enabled(environ.get('CLONE_MODE', "False"))
@@ -48,8 +48,8 @@ if CLONE_MODE and not (CLONE_DB_URI and CDB_NAME):
     raise ValueError("CLONE_MODE is enabled, but CLONE_DB_URI or CDB_NAME is missing.")
 
 # Database Information
-DB_URI = environ.get("DB_URI", "mongodb+srv://bevag22776:LTYSLtfLKt2KCMnD@cluster0.6z90l.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-DB_NAME = environ.get("DB_NAME", "Course-Empire")
+DB_URI = environ.get("DB_URI", "mongodb+srv://abhinavnarendra24:HLLYOwd339JIgxWe@cluster0.sbueait.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DB_NAME = environ.get("DB_NAME", "Cluster0")
 
 # Auto Delete Information
 AUTO_DELETE_MODE = is_enabled(environ.get('AUTO_DELETE_MODE', "True"))
@@ -57,7 +57,7 @@ AUTO_DELETE = int(environ.get("AUTO_DELETE", "20"))  # Time in minutes
 AUTO_DELETE_TIME = int(environ.get("AUTO_DELETE_TIME", "1200"))  # Time in seconds
 
 # Log Channel
-LOG_CHANNEL = int(environ.get("LOG_CHANNEL", "-1002309157883"))
+LOG_CHANNEL = int(environ.get("LOG_CHANNEL", "-1002518144043"))
 
 # File Caption
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", f"{script.CAPTION}")
@@ -68,20 +68,20 @@ PUBLIC_FILE_STORE = is_enabled(environ.get('PUBLIC_FILE_STORE', "False"))
 
 # Verify Mode Information
 VERIFY_MODE = is_enabled(environ.get('VERIFY_MODE', "False"))
-SHORTLINK_URL = environ.get("SHORTLINK_URL", "jiolink.net")
-SHORTLINK_API = environ.get("SHORTLINK_API", "be0c4404baa0485a6094e5f56a4e3a48bdabbcee")
-VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "https://t.me/hentai_Hanime_Update_Channel/30")
+SHORTLINK_URL = environ.get("SHORTLINK_URL", "gyanilinks.com")
+SHORTLINK_API = environ.get("SHORTLINK_API", "144f7213c51f77f7ecaf41f80774b137d8890974")
+VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "https://t.me/akfrkkdkwkckggk")
 
 # Ensure required variables for VERIFY_MODE
 if VERIFY_MODE and not (SHORTLINK_URL and SHORTLINK_API):
     raise ValueError("VERIFY_MODE is enabled, but SHORTLINK_URL or SHORTLINK_API is missing.")
 
 # Website Information
-WEBSITE_URL_MODE = is_enabled(environ.get('WEBSITE_URL_MODE', "False"))
-WEBSITE_URL = environ.get("WEBSITE_URL", "https://www.aklink.site/2025/01/nothing-phone-3a-ka-honest-review-sab.html")
+WEBSITE_URL_MODE = is_enabled(environ.get('WEBSITE_URL_MODE', "True"))
+WEBSITE_URL = environ.get("WEBSITE_URL", "https://abnblogtg.blogspot.com/2025/07/abntgblog.html")
 
 # File Stream Configuration
-STREAM_MODE = is_enabled(environ.get('STREAM_MODE', "True"))
+STREAM_MODE = is_enabled(environ.get('STREAM_MODE', "False"))
 MULTI_CLIENT = is_enabled(environ.get('MULTI_CLIENT', "True"))
 SLEEP_THRESHOLD = int(environ.get('SLEEP_THRESHOLD', '60'))
 PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
